@@ -1,0 +1,56 @@
+.bg-orbs {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.bg-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(90px);
+  opacity: 0.22;
+}
+
+.bg-orb--1 {
+  width: 480px;
+  height: 480px;
+  top: -10%;
+  left: -10%;
+  background: var(--accent-primary);
+  animation: floatOrb1 22s ease-in-out infinite;
+}
+
+.bg-orb--2 {
+  width: 420px;
+  height: 420px;
+  top: 40%;
+  right: -12%;
+  background: var(--accent-secondary);
+  animation: floatOrb2 26s ease-in-out infinite;
+}
+
+.bg-orb--3 {
+  width: 380px;
+  height: 380px;
+  bottom: -10%;
+  left: 30%;
+  background: #a78bfa;
+  animation: floatOrb3 30s ease-in-out infinite;
+}
+
+@keyframes floatOrb1 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(80px, 120px) scale(1.15); }
+}
+
+@keyframes floatOrb2 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(-100px, 60px) scale(0.9); }
+}
+
+@keyframes floatOrb3 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(60px, -80px) scale(1.1); }
+}
