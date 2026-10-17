@@ -1,10 +1,9 @@
-
 /* =========================================
    VARTIKA TIWARI — PREMIUM DEVELOPER THEME
    Deep Burgundy • Rose Pink • Soft Violet
 ========================================= */
 
-/* ===== RESET ===== */
+/* RESET */
 * {
   margin: 0;
   padding: 0;
@@ -17,37 +16,30 @@ html {
 }
 
 :root {
-  /* Backgrounds */
   --bg-primary: #09060a;
   --bg-secondary: #120911;
   --bg-tertiary: #1b0d18;
 
-  /* Glass surfaces */
   --bg-glass: rgba(255, 240, 246, 0.045);
   --bg-glass-hover: rgba(255, 240, 246, 0.075);
   --bg-glass-border: rgba(255, 220, 235, 0.12);
 
-  /* Text */
   --text-primary: #fff7fa;
   --text-secondary: #d0bdc7;
   --text-muted: #927d89;
 
-  /* Accent colors */
   --accent-primary: #e34b79;
   --accent-secondary: #b66bff;
   --accent-tertiary: #ff8eae;
   --accent-glow: rgba(227, 75, 121, 0.28);
 
-  /* Typography */
   --font-heading: 'Space Grotesk', sans-serif;
   --font-body: 'JetBrains Mono', monospace;
 
-  /* Layout */
   --section-padding: 120px 24px;
   --max-width: 1200px;
   --navbar-height: 80px;
 
-  /* Effects */
   --transition-smooth: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   --shadow-glow: 0 0 35px rgba(227, 75, 121, 0.12);
   --shadow-card: 0 15px 45px rgba(0, 0, 0, 0.25);
@@ -55,7 +47,7 @@ html {
   color-scheme: dark;
 }
 
-/* ===== BASE ===== */
+/* BASE */
 body {
   min-width: 320px;
   background-color: var(--bg-primary);
@@ -142,14 +134,14 @@ img {
   color: #ffffff;
 }
 
-/* ===== ACCESSIBILITY ===== */
+/* ACCESSIBILITY */
 :focus-visible {
   outline: 2px solid var(--accent-tertiary);
   outline-offset: 4px;
   border-radius: 4px;
 }
 
-/* ===== SHARED SECTION LAYOUT ===== */
+/* SHARED SECTION LAYOUT */
 .section {
   width: 100%;
   max-width: var(--max-width);
@@ -157,7 +149,7 @@ img {
   margin: 0 auto;
 }
 
-/* ===== GLASSMORPHISM ===== */
+/* GLASSMORPHISM */
 .glass {
   background: var(--bg-glass);
   border: 1px solid var(--bg-glass-border);
@@ -172,7 +164,7 @@ img {
   border-color: rgba(227, 75, 121, 0.25);
 }
 
-/* ===== GRADIENT TEXT ===== */
+/* GRADIENT TEXT */
 .gradient-text {
   background: linear-gradient(
     110deg,
@@ -186,12 +178,12 @@ img {
   color: transparent;
 }
 
-/* ===== PREMIUM GLOW ===== */
+/* PREMIUM GLOW */
 .glow-text {
   text-shadow: 0 0 28px rgba(227, 75, 121, 0.22);
 }
 
-/* ===== SHARED BUTTON POLISH ===== */
+/* BUTTONS */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -242,7 +234,7 @@ img {
   transform: translateY(-2px);
 }
 
-/* ===== CARDS ===== */
+/* CARDS */
 .card {
   background: linear-gradient(
     145deg,
@@ -264,7 +256,7 @@ img {
   box-shadow: var(--shadow-glow);
 }
 
-/* ===== SCROLL REVEAL ===== */
+/* SCROLL REVEAL */
 .reveal {
   opacity: 0;
   transform: translateY(24px);
@@ -278,7 +270,7 @@ img {
   transform: translateY(0);
 }
 
-/* ===== CUSTOM SCROLLBAR ===== */
+/* CUSTOM SCROLLBAR */
 html {
   scrollbar-width: thin;
   scrollbar-color: #653047 var(--bg-primary);
@@ -293,11 +285,7 @@ html {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(
-    180deg,
-    #a23a61,
-    #653047
-  );
+  background: linear-gradient(180deg, #a23a61, #653047);
   border-radius: 20px;
 }
 
@@ -305,7 +293,7 @@ html {
   background: #e34b79;
 }
 
-/* ===== RESPONSIVE SPACING ===== */
+/* RESPONSIVE SPACING */
 @media (max-width: 768px) {
   :root {
     --section-padding: 80px 20px;
@@ -342,7 +330,7 @@ html {
   }
 }
 
-/* ===== REDUCED MOTION ===== */
+/* REDUCED MOTION */
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
@@ -358,4 +346,4 @@ html {
     transform: none;
   }
 }
-```
+
