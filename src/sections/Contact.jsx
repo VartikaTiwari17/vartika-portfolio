@@ -21,7 +21,6 @@ const [status, setStatus] = useState('idle');
 const validate = () => {
 const newErrors = {};
 
-```
 if (!formData.name.trim()) {
   newErrors.name = 'Please enter your name.';
 }
@@ -37,14 +36,14 @@ if (!formData.message.trim()) {
 }
 
 return newErrors;
-```
+
 
 };
 
 const handleChange = (e) => {
 const { name, value } = e.target;
 
-```
+
 setFormData((prev) => ({
   ...prev,
   [name]: value,
@@ -260,7 +259,7 @@ Open to opportunities — feel free to reach out. </p> </div> </Reveal>
     </div>
   </Reveal>
 </section>
-```
+
 
 );
 }
