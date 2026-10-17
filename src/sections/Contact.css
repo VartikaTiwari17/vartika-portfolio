@@ -266,3 +266,41 @@ width: 100%;
 transition: none;
 }
 }
+
+/* Form submission status */
+.contact__status {
+display: flex;
+align-items: flex-start;
+gap: 10px;
+margin: 0;
+padding: 13px 15px;
+border: 1px solid var(--bg-glass-border);
+border-radius: 10px;
+font-size: 12px;
+line-height: 1.8;
+overflow-wrap: anywhere;
+}
+
+.contact__status svg {
+flex-shrink: 0;
+margin-top: 2px;
+}
+
+.contact__status--success {
+color: #a7f3d0;
+background: rgba(16, 185, 129, 0.08);
+border-color: rgba(16, 185, 129, 0.25);
+}
+
+.contact__status--error {
+color: #ffb4c0;
+background: rgba(239, 68, 68, 0.08);
+border-color: rgba(239, 68, 68, 0.25);
+}
+
+.contact__submit:disabled {
+opacity: 0.65;
+cursor: not-allowed;
+transform: none;
+}
+
