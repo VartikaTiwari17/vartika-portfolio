@@ -1,24 +1,90 @@
+/* =========================================
+   PROJECTS SECTION — PREMIUM BURGUNDY THEME
+========================================= */
+
+.projects {
+  position: relative;
+  width: 100%;
+  scroll-margin-top: 90px;
+}
+
 .projects__header {
-  margin-bottom: 48px;
+  margin-bottom: 52px;
 }
 
 .projects__grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 24px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: stretch;
+  gap: 28px;
+  width: 100%;
 }
 
-@media (max-width: 900px) {
-  .projects__grid {
-    grid-template-columns: 1fr;
+/* Grid items */
+.projects__grid > div {
+  min-width: 0;
+  height: 100%;
+}
+
+/* Highlight the first featured project */
+.projects__grid > div:first-child {
+  grid-column: 1 / -1;
+}
+
+/* Smooth entrance for project cards */
+.projects__grid > div {
+  animation: projectCardEnter 0.6s ease both;
+}
+
+@keyframes projectCardEnter {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
-.projects__grid > div:first-child {
-  grid-column: span 2;
+
+/* Tablet */
+@media (max-width: 900px) {
+  .projects__header {
+    margin-bottom: 38px;
+  }
+
+  .projects__grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 24px;
+  }
+
+  .projects__grid > div:first-child {
+    grid-column: auto;
+  }
 }
 
-@media (max-width: 900px) {
-  .projects__grid > div:first-child {
-    grid-column: span 1;
+/* Mobile */
+@media (max-width: 600px) {
+  .projects__header {
+    margin-bottom: 30px;
+  }
+
+  .projects__grid {
+    gap: 20px;
+  }
+}
+
+/* Small phones */
+@media (max-width: 360px) {
+  .projects__grid {
+    gap: 16px;
+  }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .projects__grid > div {
+    animation: none;
   }
 }
