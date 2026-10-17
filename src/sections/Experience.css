@@ -1,102 +1,300 @@
+/* ================================
+EXPERIENCE SECTION
+================================ */
+
+.experience {
+position: relative;
+overflow: hidden;
+}
+
 .experience__header {
-  margin-bottom: 48px;
+margin-bottom: 52px;
 }
 
+.experience__header .section__title {
+margin-bottom: 0;
+}
+
+/* Timeline container */
 .timeline {
-  position: relative;
-  padding-left: 32px;
-  border-left: 1px solid var(--bg-glass-border);
+position: relative;
+padding-left: 36px;
+margin-left: 8px;
 }
 
+/* Burgundy timeline line */
+.timeline::before {
+content: '';
+position: absolute;
+top: 4px;
+bottom: 28px;
+left: 0;
+width: 2px;
+border-radius: 999px;
+background: linear-gradient(
+180deg,
+var(--accent-primary),
+var(--accent-secondary),
+rgba(227, 75, 121, 0.08)
+);
+opacity: 0.75;
+}
+
+/* Timeline items */
 .timeline__item {
-  position: relative;
-  margin-bottom: 32px;
-  opacity: 0;
-  transform: translateX(-20px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
+position: relative;
+margin-bottom: 32px;
+opacity: 0;
+transform: translateX(-18px);
+transition:
+opacity 0.6s ease,
+transform 0.6s ease;
+}
+
+.timeline__item:last-child {
+margin-bottom: 0;
 }
 
 .timeline__item--visible {
-  opacity: 1;
-  transform: translateX(0);
+opacity: 1;
+transform: translateX(0);
 }
 
+/* Glowing timeline marker */
 .timeline__marker {
-  position: absolute;
-  left: -37px;
-  top: 24px;
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  background: var(--accent-primary);
-  box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.2);
+position: absolute;
+left: -42px;
+top: 28px;
+width: 13px;
+height: 13px;
+border-radius: 50%;
+background: var(--accent-primary);
+border: 2px solid var(--bg-primary);
+box-shadow:
+0 0 0 4px rgba(227, 75, 121, 0.16),
+0 0 18px rgba(227, 75, 121, 0.4);
+z-index: 2;
+transition:
+transform 0.3s ease,
+box-shadow 0.3s ease;
 }
 
+.timeline__item:hover .timeline__marker {
+transform: scale(1.2);
+box-shadow:
+0 0 0 6px rgba(227, 75, 121, 0.13),
+0 0 24px rgba(227, 75, 121, 0.55);
+}
+
+/* Experience glass card */
 .timeline__card {
-  padding: 24px;
+position: relative;
+padding: 28px;
+border-radius: 18px;
+overflow: hidden;
+transition:
+transform 0.35s ease,
+border-color 0.35s ease,
+box-shadow 0.35s ease;
 }
 
+.timeline__card::before {
+content: '';
+position: absolute;
+top: 0;
+left: 0;
+width: 3px;
+height: 100%;
+background: linear-gradient(
+180deg,
+var(--accent-primary),
+var(--accent-secondary)
+);
+opacity: 0.8;
+transition: opacity 0.3s ease;
+}
+
+.timeline__item:hover .timeline__card {
+transform: translateY(-4px);
+border-color: rgba(227, 75, 121, 0.3);
+box-shadow: 0 18px 45px rgba(8, 3, 9, 0.25);
+}
+
+.timeline__item:hover .timeline__card::before {
+opacity: 1;
+}
+
+/* Year badge */
 .timeline__year {
-  font-size: 12px;
-  color: var(--accent-secondary);
-  letter-spacing: 0.05em;
+display: inline-flex;
+align-items: center;
+font-size: 12px;
+font-weight: 600;
+color: var(--accent-tertiary);
+letter-spacing: 0.08em;
+text-transform: uppercase;
+padding: 6px 11px;
+border-radius: 999px;
+background: rgba(227, 75, 121, 0.09);
+border: 1px solid rgba(227, 75, 121, 0.18);
 }
 
+/* Role title */
 .timeline__role {
-  font-size: 19px;
-  color: var(--text-primary);
-  margin: 6px 0 2px;
+font-family: var(--font-heading);
+font-size: clamp(18px, 2vw, 22px);
+font-weight: 600;
+line-height: 1.4;
+color: var(--text-primary);
+margin: 14px 0 5px;
+letter-spacing: -0.025em;
 }
 
+/* Organization */
 .timeline__org {
-  font-size: 13px;
-  color: var(--text-secondary);
-  display: block;
-  margin-bottom: 14px;
+display: block;
+font-size: 13px;
+color: var(--accent-tertiary);
+line-height: 1.6;
+margin-bottom: 20px;
 }
 
+/* Responsibility list */
 .timeline__points {
-  list-style: none;
-  margin-bottom: 16px;
+list-style: none;
+margin: 0 0 22px;
+padding: 0;
 }
 
 .timeline__points li {
-  font-size: 14px;
-  color: var(--text-secondary);
-  line-height: 1.7;
-  padding-left: 16px;
-  position: relative;
-  margin-bottom: 6px;
+position: relative;
+font-size: 14px;
+color: var(--text-secondary);
+line-height: 1.8;
+padding-left: 20px;
+margin-bottom: 9px;
+}
+
+.timeline__points li:last-child {
+margin-bottom: 0;
 }
 
 .timeline__points li::before {
-  content: '—';
-  position: absolute;
-  left: 0;
-  color: var(--accent-primary);
+content: '—';
+position: absolute;
+left: 0;
+top: 0;
+color: var(--accent-primary);
+font-weight: 700;
 }
 
+/* Technology badges */
 .timeline__tech {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
+display: flex;
+flex-wrap: wrap;
+gap: 9px;
+padding-top: 17px;
+border-top: 1px solid var(--bg-glass-border);
 }
 
 .timeline__tech-badge {
-  font-size: 11px;
-  padding: 5px 12px;
-  border-radius: 999px;
-  background: var(--bg-glass);
-  border: 1px solid var(--bg-glass-border);
-  color: var(--text-secondary);
+display: inline-flex;
+align-items: center;
+font-family: var(--font-body);
+font-size: 11px;
+line-height: 1.5;
+padding: 6px 11px;
+border-radius: 7px;
+background: rgba(227, 75, 121, 0.06);
+border: 1px solid rgba(227, 75, 121, 0.16);
+color: var(--text-secondary);
+transition:
+background 0.25s ease,
+border-color 0.25s ease,
+color 0.25s ease,
+transform 0.25s ease;
 }
 
-@media (max-width: 600px) {
-  .timeline {
-    padding-left: 24px;
-  }
+.timeline__tech-badge:hover {
+background: rgba(227, 75, 121, 0.13);
+border-color: rgba(227, 75, 121, 0.4);
+color: var(--text-primary);
+transform: translateY(-2px);
+}
 
-  .timeline__marker {
-    left: -29px;
-  }
+/* Tablet */
+@media (max-width: 768px) {
+.experience__header {
+margin-bottom: 38px;
+}
+
+.timeline__card {
+padding: 24px;
+}
+
+.timeline__role {
+font-size: 19px;
+}
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+.timeline {
+padding-left: 25px;
+margin-left: 5px;
+}
+
+.timeline__marker {
+left: -31px;
+top: 25px;
+width: 12px;
+height: 12px;
+}
+
+.timeline__item {
+margin-bottom: 24px;
+}
+
+.timeline__card {
+padding: 20px 17px;
+border-radius: 14px;
+}
+
+.timeline__role {
+font-size: 18px;
+}
+
+.timeline__org {
+font-size: 12px;
+margin-bottom: 16px;
+}
+
+.timeline__points li {
+font-size: 13px;
+line-height: 1.75;
+}
+
+.timeline__tech {
+gap: 7px;
+}
+
+.timeline__tech-badge {
+font-size: 10px;
+padding: 5px 9px;
+}
+}
+
+/* Accessibility: reduced motion */
+@media (prefers-reduced-motion: reduce) {
+.timeline__item,
+.timeline__card,
+.timeline__marker,
+.timeline__tech-badge {
+transition: none;
+}
+
+.timeline__item {
+opacity: 1;
+transform: none;
+}
 }
