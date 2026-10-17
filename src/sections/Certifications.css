@@ -1,64 +1,189 @@
+/* ================================
+CERTIFICATIONS SECTION
+================================ */
+
+.certifications {
+position: relative;
+}
+
 .certifications__header {
-  margin-bottom: 40px;
+margin-bottom: 42px;
 }
 
+/* Certifications grid */
 .certifications__grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+display: grid;
+grid-template-columns: repeat(3, minmax(0, 1fr));
+gap: 20px;
+align-items: stretch;
 }
 
+/* Certification card */
 .certifications__card {
-  padding: 28px 24px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  transition: all var(--transition-smooth);
+position: relative;
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+min-width: 0;
+padding: 26px 24px;
+border-radius: 18px;
+overflow: hidden;
+transition:
+transform 0.3s ease,
+border-color 0.3s ease,
+box-shadow 0.3s ease,
+background 0.3s ease;
+}
+
+/* Subtle decorative glow */
+.certifications__card::after {
+content: '';
+position: absolute;
+top: -65px;
+right: -65px;
+width: 150px;
+height: 150px;
+border-radius: 50%;
+background: radial-gradient(
+circle,
+rgba(227, 75, 121, 0.12),
+transparent 70%
+);
+pointer-events: none;
+transition:
+transform 0.4s ease,
+opacity 0.4s ease;
+opacity: 0.65;
 }
 
 .certifications__card:hover {
-  transform: translateY(-6px);
-  border-color: var(--accent-secondary);
-  box-shadow: 0 12px 30px rgba(34, 211, 238, 0.12);
+transform: translateY(-5px);
+border-color: rgba(227, 75, 121, 0.3);
+box-shadow: 0 16px 38px rgba(8, 3, 9, 0.25);
+background: var(--bg-glass-hover);
+}
+
+.certifications__card:hover::after {
+transform: scale(1.35);
+opacity: 1;
+}
+
+/* Award icon */
+.certifications__icon {
+position: relative;
+z-index: 1;
+display: flex;
+align-items: center;
+justify-content: center;
+width: 50px;
+height: 50px;
+margin-bottom: 22px;
+color: var(--accent-tertiary);
+background: rgba(227, 75, 121, 0.1);
+border: 1px solid rgba(227, 75, 121, 0.22);
+border-radius: 14px;
+transition:
+transform 0.3s ease,
+background 0.3s ease,
+box-shadow 0.3s ease;
+}
+
+.certifications__card:hover .certifications__icon {
+transform: translateY(-2px) rotate(-3deg);
+background: rgba(227, 75, 121, 0.16);
+box-shadow: 0 0 22px rgba(227, 75, 121, 0.14);
+}
+
+/* Certificate name */
+.certifications__name {
+position: relative;
+z-index: 1;
+margin: 0 0 12px;
+color: var(--text-primary);
+font-family: var(--font-heading);
+font-size: 17px;
+font-weight: 600;
+line-height: 1.5;
+overflow-wrap: anywhere;
+}
+
+/* Issuing organization */
+.certifications__issuer {
+position: relative;
+z-index: 1;
+margin-bottom: 18px;
+color: var(--text-secondary);
+font-size: 13px;
+line-height: 1.7;
+overflow-wrap: anywhere;
+}
+
+/* Year badge */
+.certifications__year {
+position: relative;
+z-index: 1;
+display: inline-flex;
+align-items: center;
+margin-top: auto;
+padding: 6px 11px;
+border-radius: 8px;
+color: var(--accent-tertiary);
+background: rgba(227, 75, 121, 0.08);
+border: 1px solid rgba(227, 75, 121, 0.17);
+font-size: 11px;
+font-weight: 600;
+letter-spacing: 0.04em;
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+.certifications__grid {
+grid-template-columns: repeat(2, minmax(0, 1fr));
+gap: 16px;
+}
+
+.certifications__card {
+padding: 23px 21px;
+}
+}
+
+/* Mobile */
+@media (max-width: 560px) {
+.certifications__header {
+margin-bottom: 30px;
+}
+
+.certifications__grid {
+grid-template-columns: 1fr;
+gap: 14px;
+}
+
+.certifications__card {
+padding: 21px 19px;
+border-radius: 15px;
 }
 
 .certifications__icon {
-  width: 44px;
-  height: 44px;
-  border-radius: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: rgba(34, 211, 238, 0.12);
-  color: var(--accent-secondary);
-  margin-bottom: 6px;
+width: 44px;
+height: 44px;
+margin-bottom: 17px;
 }
 
 .certifications__name {
-  font-size: 16px;
-  color: var(--text-primary);
-  line-height: 1.4;
+font-size: 16px;
 }
 
 .certifications__issuer {
-  font-size: 13px;
-  color: var(--text-secondary);
+font-size: 12px;
+margin-bottom: 14px;
+}
 }
 
-.certifications__year {
-  font-size: 12px;
-  color: var(--text-muted);
-  margin-top: auto;
+/* Reduced motion accessibility */
+@media (prefers-reduced-motion: reduce) {
+.certifications__card,
+.certifications__card::after,
+.certifications__icon {
+transition: none;
 }
-
-@media (max-width: 900px) {
-  .certifications__grid {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
-@media (max-width: 600px) {
-  .certifications__grid {
-    grid-template-columns: 1fr;
-  }
 }
